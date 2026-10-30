@@ -1,6 +1,6 @@
 /**
- * Android composes keyboardType and secureTextEntry into one inputType, and
- * each field below commits one the props did not ask for.
+ * Every field below asks for secureTextEntry. On Android, fields 2 and 3 show
+ * the password in clear: field 2 from the start, field 3 after Show, then Hide.
  *
  * @format
  */
@@ -53,16 +53,6 @@ function App() {
           <Button
             title={hidden ? 'Show' : 'Hide'}
             onPress={() => setHidden(value => !value)}
-          />
-
-          <Text style={styles.label}>
-            4. keyboardType="url" + secureTextEntry={'{false}'}
-          </Text>
-          <TextInput
-            style={styles.input}
-            placeholder="https://"
-            keyboardType="url"
-            secureTextEntry={false}
           />
         </ScrollView>
       </SafeAreaView>
